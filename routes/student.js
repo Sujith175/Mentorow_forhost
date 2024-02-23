@@ -3,7 +3,7 @@ const { addStudent, getAllStudent, getSingleStudent, deleteStudent } = require('
 
 const router = express.Router()
 
-router.post('/create/:userId', addStudent)
+router.post('/create', addStudent)
 router.get('/AllStudent/:userId', getAllStudent)
 router.get('/singleStudent/:id/:userId',getSingleStudent)
 router.delete('/deleteStudent/:id/:userId', deleteStudent)

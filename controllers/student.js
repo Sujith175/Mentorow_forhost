@@ -4,11 +4,6 @@ const ErrorHandler = require('../utils/ErrorHandler')
 
 const addStudent = async (req, res, next) => {
     try {
-        const { userId } = req.params
-        const user = await Auth.findById({ _id: userId })
-        if (!user) {
-           return next(new ErrorHandler("Admin not found", 404))
-        }
         const { firstName, lastName, email, phoneNumber, qualification, specialization, experience, jobLocation, yearOfPassout} = req.body;
         if (!firstName || !lastName || !email || !phoneNumber || !qualification) {
             return next(new ErrorHandler("Please provide all required fields", 400))
